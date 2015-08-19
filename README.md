@@ -10,6 +10,7 @@ What we are doing here is mostly collecting useful snippets from all over the in
 
 ## Table of Contents
 - [Rewrite and Redirection](#rewrite-and-redirection)
+    - [Redirect Entire Domain](#redirect-domain)
     - [Force www](#force-www)
     - [Force www in a Generic Way](#force-www-in-a-generic-way)
     - [Force non-www](#force-non-www)
@@ -54,6 +55,14 @@ What we are doing here is mostly collecting useful snippets from all over the in
 
 ## Rewrite and Redirection
 Note: It is assumed that you have `mod_rewrite` installed and enabled.
+
+### Redirect an Entire Domain w/ Current URL
+``` apacheconf
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !example.com$ [NC]
+RewriteRule ^(.*)$ http://example.com/$1 [L,R=301]
+```
 
 ### Force www
 ``` apacheconf
