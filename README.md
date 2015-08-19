@@ -56,7 +56,7 @@ What we are doing here is mostly collecting useful snippets from all over the in
 ## Rewrite and Redirection
 Note: It is assumed that you have `mod_rewrite` installed and enabled.
 
-### Redirect an Entire Domain w/ Current URL
+### <a name="redirect-domain"></a> Redirect an Entire Domain w/ Current URL
 ``` apacheconf
 RewriteEngine On
 RewriteBase /
